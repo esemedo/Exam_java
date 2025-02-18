@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.elisa</groupId>
-	<artifactId>apicomplainingchat</artifactId>
+	<artifactId>apiquotes</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>apicomplainingchat</name>
 	<description>Api pour écouter les plaintes</description>
@@ -55,6 +55,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
 	</dependencies>
 
 	<build>
