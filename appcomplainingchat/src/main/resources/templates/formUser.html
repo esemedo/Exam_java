@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Chat - Connexion</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link th:href="@{/styles/connexion.css}" rel="stylesheet" />
+	</head>
+	<body>
+		<main class="container-connexion">
+			<h1>Connexion</h1>
+			<form class="form-connexion" th:action="@{/submitUser}" method="post">
+				<label for="lastname">Entrez votre nom :</label>
+				<input type="text" id="lastname" autocomplete="family-name" name="lastname">
+				<label for="firstname">Entrez votre prénom:</label>
+				<input type="text" id="firstname" autocomplete="given-name" name="firstname">
+				<button type="submit">Envoyer</button>
+			</form>
+		</main>
+	</body>
+</html>

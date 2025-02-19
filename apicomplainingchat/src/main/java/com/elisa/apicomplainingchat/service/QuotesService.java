@@ -27,7 +27,7 @@ public class QuotesService {
 				index = r.nextInt(quotes.size());
 				return quotes.get(index);
 			}
-			return new Quote();
+			return new Quote("");
 	}
 	
 }
