@@ -1,16 +1,15 @@
 DROP TABLE IF EXISTS `message`;
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int AUTO_INCREMENT PRIMARY KEY,
   `lastname` varchar(255) UNIQUE,
-  `firstname`varchar(255) ,
-  PRIMARY KEY (`id`)
+  `firstname`varchar(255)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
 
 CREATE TABLE `message` (
-  `id` int NOT NULL  PRIMARY KEY AUTO_INCREMENT,
+  `id` int AUTO_INCREMENT PRIMARY KEY,
   `content` text,
   `user_id` int ,
   `date` datetime(6),
