@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Chat - Problème interne</title>
+	</head>
+	<body>
+	    <h1>Erreur 500 - Problème interne</h1>
+	    <p>L'application rencontre des problèmes techniques</p>
+		<p>Erreur : <span style='color=red;' th:text="${error}" /></p>
+	    <a href="/chat">Retour au chat</a>
+	</body>
+</html>

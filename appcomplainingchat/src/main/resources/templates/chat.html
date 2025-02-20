@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Chat - Conversation</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link th:href="@{/styles/main.css}" rel="stylesheet" />
+	</head>
+	<body>
+		<main>
+			<h1>Chat</h1>
+			<div class="container">
+				<h3 class="username" >Nom d'utilisateur : <span th:text=" ${username}" /></h3>
+				<div class="chat" id="chat">
+					<div class="block-message" th:each="message:${allMessages}">
+						<div class="message-date" th:text="${message.formattedDate}"></div>
+						<div class="message-chat message-right" th:text="${message.content}"></div>
+						<div class="message-chat message-left" th:text="${message.response}"></div>
+					</div>
+				</div>
+			
+				<form class="input-chat" th:action="@{/submitMessage}" id="form-message" method="post">
+					<label for="name" id="label-message">Entrez un message :</label>
+				 	<textarea  id="message" name="message" onkeypress="pressEnter(event);"></textarea>
+					<button type="submit" id="submit-message">Envoyer</button>
+				</form>
+			</div>
+			<a href="/user" type="button">Retour à la page de connexion</button>
+		</main>
+		<script type="text/javascript" th:src="@{/js/actions.js}"></script>
+	</body>
+</html>
