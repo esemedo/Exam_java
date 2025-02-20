@@ -13,7 +13,7 @@ public class MessageDTO {
 
 	public MessageDTO(Message message) {
         this.content = message.getContent();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         this.formattedDate = message.getDate().format(formatter);
         this.user = message.getUser();
         this.response = message.getResponse();

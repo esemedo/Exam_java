@@ -1,5 +1,6 @@
 package com.elisa.appcomplainingchat.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -17,5 +18,8 @@ public class UserService {
 	public User findOrCreateUser(String firstname, String lastname) {
 		Optional<User> optionalUser = userRepository.findByLastname(lastname);
 		return optionalUser.orElseGet(()->userRepository.save(new User(firstname,lastname)));
+	}
+	public List<User> getUsersWhoPosted(){
+		return this.userRepository.findByMessagesIsNotNull();	
 	}
 }

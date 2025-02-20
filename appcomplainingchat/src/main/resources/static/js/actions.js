@@ -10,3 +10,8 @@ function pressEnter(event) {
 		document.getElementById("form-message").submit();
     }
 }
+
+
+
+
+

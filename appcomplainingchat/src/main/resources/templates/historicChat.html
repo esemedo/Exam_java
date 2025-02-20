@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Chat - Historiques de conversations</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link th:href="@{/styles/historic.css}" rel="stylesheet" />
+		<link th:href="@{/styles/main.css}" rel="stylesheet" />
+	</head>
+	<body>
+		<main>
+			<h1>Historiques de conversations</h1>
+			    <ul>
+			        <li th:each="user : ${listUser}" th:data-user-id="${user.id}" th:text="${user.firstname} + ' ' + ${user.lastname}"
+			            th:onclick="toggleMessages(this)">
+			        </li>
+			    </ul>
+			    <div th:each="user : ${listUser}" th:id="|messages-${user.id}|" class="historic-chat">
+			        <h3 th:text="${user.firstname} + ' ' + ${user.lastname}"></h3>
+					<div class="chat" id="chat">
+						<div class="block-message" th:each="msg : ${user.messages}">
+							<div class="message-date" th:text="${#temporals.format(msg.date, 'dd/MM/yyyy hh:mm:ss')}"></div>
+							<div class="message-chat message-right" th:text="${msg.content}"></div>
+							<div class="message-chat message-left" th:text="${msg.response}"></div>
+						</div>
+					</div>
+			        <button onclick="this.parentElement.style.display='none'">Fermer</button>
+			    </div>
+
+			
+			
+			<a href="/user" type="button">Retour à la page de connexion</button>
+		</main>
+		<script type="text/javascript" th:src="@{/js/historic.js}"></script>
+	</body>
+</html>

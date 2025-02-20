@@ -26,8 +26,6 @@ public class ComplainingchatController {
 	}
 	@GetMapping("chat")
 	public String getChat(Model model) {
-		//A enlever
-		//this.currentUser = userService.findOrCreateUser("noemie");
 		if(this.currentUser == null) {
 			return "redirect:/user";
 		}else {
@@ -46,6 +44,13 @@ public class ComplainingchatController {
 	public String getHome(Model model) {
 		return "redirect:/chat";
 	}
+	
+	@GetMapping("historic")
+	public String getHistoric(Model model) {
+		model.addAttribute("listUser", this.userService.getUsersWhoPosted());
+		return "historicChat";
+	}
+	
 	@PostMapping("submitMessage")
 	public String postForm(Model model, @RequestParam String message) {
 			if(currentUser == null) {

@@ -1,8 +1,8 @@
 package com.elisa.appcomplainingchat.service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -27,9 +27,10 @@ public class MessageService {
 	}
 	public List<MessageDTO> findMessagesByUser(User user){
 		List<Message> allMessages = this.messageRepository.findByUser(user);
-	
-		 return allMessages.stream()
-                 .map(MessageDTO::new) 
-                 .collect(Collectors.toList());
+		List<MessageDTO> messageDTOs = new ArrayList<>();
+		for (Message message : allMessages) {
+		    messageDTOs.add(new MessageDTO(message));
+		}
+		 return messageDTOs;
 	}
 }
