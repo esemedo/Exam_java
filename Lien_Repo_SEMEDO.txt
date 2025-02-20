@@ -1,0 +1,4 @@
+Voici le lien de mon repo github: https://github.com/esemedo/Exam_java/tree/main
+Il contient les 2 projets demandés. Les explications de la configuration et du lancement de ces applications sont détaillés dans le README.md du repo.
+
+SEMEDO Elisa - B3 dev A
